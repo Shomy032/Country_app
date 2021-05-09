@@ -171,14 +171,15 @@ h4:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #main .card {
-  width: 22%;
-  margin-bottom: 5rem;
+  width: 240px;
+  margin: 0 0.5rem;
+  margin-bottom: 3rem;
   background-color: #2B3743;
   cursor: pointer;
   -webkit-transition: all 300ms ease;
@@ -191,10 +192,17 @@ h4:hover {
 
 #main img {
   width: 100%;
+  height: 150px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#main #info {
+  padding: 0.6rem;
 }
 
 #main h4 {
-  margin-left: 1.8rem;
   margin-top: 1rem;
   font-size: 1.2rem;
   color: white;
@@ -202,7 +210,7 @@ h4:hover {
 
 #main ul {
   list-style-type: none;
-  padding: 1.5rem;
+  padding: 0.7rem;
   padding-top: 0.7rem;
 }
 
@@ -216,6 +224,6 @@ h4:hover {
 
 #main ul li span {
   color: white;
-  margin: 0 0.5rem;
+  margin: 0 0.2rem;
 }
 /*# sourceMappingURL=style.css.map */
