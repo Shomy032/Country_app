@@ -1,0 +1,49 @@
+#main{
+width: 100%;
+padding: 0 6rem;
+
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+.card{
+  width: 22%;
+ margin-bottom: 5rem;
+
+ background-color: $light-gray;
+
+ cursor: pointer;
+ transition: all 300ms ease;
+}
+.card:hover{
+opacity: 0.85;
+}
+img{
+  width: 100%;
+}
+h4{
+  margin-left: 1.8rem;
+  margin-top: 1rem;
+
+  font-size: 1.2rem;
+  color: $white;
+}
+ul{
+  list-style-type: none;
+  padding: 1.5rem;
+  padding-top: 0.7rem;
+
+  li{
+    margin: 0.3rem 0;
+  #population , #region , #capital{
+    opacity: 0.8;
+  }
+    span{
+      color: $white;
+      margin: 0 0.5rem;
+    }
+  }
+}
+}
+// card is done , now its time for js :)
