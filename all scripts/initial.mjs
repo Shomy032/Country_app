@@ -1,17 +1,14 @@
-//parent
-const main = document.getElementById('main');
+export { getData , url_all_init } ;
 
-const url_all = 'https://restcountries.eu/rest/v2/all?fields=name;capital;region;population;flag';
-
-// initial fetch
-getData(url_all) ;
+// url with defined what to fetch (we dont need all)
+const url_all_init = 'https://restcountries.eu/rest/v2/all?fields=name;capital;region;population;flag';
 
 //function for initial fetch (reusable later) ;
 async function getData(url){
-
   //first clear main
 main.innerHTML = '' ;
 
+// fetch data
 const resp = await fetch(url);
 const data = await resp.json();
 
@@ -42,13 +39,13 @@ if (region == "" || region === null){
   region = " no region..."
 }
 
-// number format algorytm ,bcs numbers are too big..
+// number (population) format algorytm ,bcs numbers are too big..
 if (population > 10000){
   population = (population / 1000000) ;
   population = population.toFixed(2) + " " + 'M';
 } 
 
-  // truncate algorithms
+  // truncate string algorithms :
   // 1.
   if (name.length > 18) {
      name = name.slice(0, 18) + '...' ;
@@ -82,3 +79,5 @@ if (population > 10000){
 main.appendChild(card);
 });
 }
+
+ 

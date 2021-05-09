@@ -8,14 +8,20 @@
 <!-- link to all  styling -->
 <link rel="stylesheet" href="./all styling/style.css">
 <!--  -->
-<!-- main script -->
-<script src="./all scripts/script.js" defer></script>
-<!-- script for theme switch (dark , light mode) -->
-<script src="/all scripts/theme-switch.js"></script>
-<!--  -->
+
 <!-- font awesome -->
 <script src="https://kit.fontawesome.com/9f29b1c5a3.js" crossorigin="anonymous"></script>
 <!--  -->
+
+<!-- SCRIPTS : -->
+ 
+<!-- main script -->
+<script src="./all scripts/main_script.js" defer></script>
+<!-- script for theme switch (dark , light mode) -->
+<script src="/all scripts/theme-switch.js"></script>
+<!-- <script src="./all scripts/initial.mjs" type="module"></script> -->
+<!--  -->
+
 </head>
 <body>
 <!--  -->
@@ -25,9 +31,10 @@
 </header>  
 <!-- //section for search and filter -->
 <div id="section2">
-<form>
-  <input id="input" type="text" placeholder="search for the country..." autocomplete="off">
-  <i class="fas fa-search"></i>
+  <!--  -->
+<form id="form">
+  <input id="input" type="text" placeholder="search for the country..." autocomplete="off" name="search">
+  <button name="btn" class='submit' type="submit"><i class="fas fa-search"></i></button>
 </form>
 <!-- // button and dropdown manu -->
 <div id="drop_down_wraper">
@@ -53,6 +60,6 @@
 
 
 
-<!--  -->
+
 </body>
 </html>

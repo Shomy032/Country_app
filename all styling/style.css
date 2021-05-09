@@ -70,6 +70,10 @@ h4:hover {
           align-items: center;
 }
 
+#section2 form {
+  z-index: 8;
+}
+
 #section2 form #input {
   width: 25rem;
   height: 2.5rem;
@@ -78,6 +82,7 @@ h4:hover {
   border: none;
   outline: none;
   border-radius: 0.3rem;
+  z-index: 9;
   padding: 0 3rem;
 }
 
@@ -97,10 +102,15 @@ h4:hover {
   color: white;
 }
 
-#section2 form .fa-search {
-  -webkit-transform: translateX(-300%);
-          transform: translateX(-300%);
-  pointer-events: none;
+#section2 form .submit {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+  padding: 0.8rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
   color: white;
 }
 

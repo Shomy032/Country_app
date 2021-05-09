@@ -10,6 +10,7 @@ padding: 0 6rem;
   justify-content: space-between;
   align-items: center;
   form{
+    z-index: 8;
     #input{
       width: 25rem;
       height: 2.5rem;
@@ -19,15 +20,23 @@ padding: 0 6rem;
       border: none;
       outline: none;
       border-radius: 0.3rem;
+      z-index: 9;
 
+      
       padding: 0 3rem;
     }
     #input::placeholder{
       color: $white;
     }
-    .fa-search{
-      transform: translateX(-300%);
-      pointer-events: none;
+    .submit{
+       transform: translateX(-200%);
+      
+    padding: 0.8rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 10;
 
       color: $white ;
     }
