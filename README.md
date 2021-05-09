@@ -16,6 +16,8 @@
 
 - all layout will be builded with css-flexbox
 
+- app should also have dark and light mode
+
 ## LOOK IN DESIGH FOLDER FOR DESIGN OF FINISHED APP
 
 ## IF YOU HAVE ANY SUGESTION FELL FREE TO CONTACT ME , ILL BE HAPPY TO ACCEPT ANY GOOD SOLUTONS 
