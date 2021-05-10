@@ -51,9 +51,15 @@ button{
 button:hover{
  background-color: $light-gray-hover;
 }
-.fa-chevron-down{
+.fa-chevron-left{
   transform: translateX(-250%);
   color: $white;
+  pointer-events: none;
+}
+.fa-chevron-right{
+  transform: translateX(-250%);
+  color: $white;
+  pointer-events: none;
 }
 #drop_down{ 
   position: absolute;
@@ -65,12 +71,24 @@ height: 12.5rem;
 background-color: $light-gray;
 color: $white;
 
-display: none; // this is by defold , js gonna cahnge that on click to block
+transform: translateX(250%); // this is by defolt , js gonna cahnge that on click to block
+z-index: 10;
+outline: 1px solid white;
+transition: all 500ms ease-in;
 button{
   @include button-style;
   text-align: left;
   padding-left: 2rem;
 }
+.region_btn:hover{
+background-color: $light-gray-hover;
+}
+.region_btn:focus{
+  background-color: rgb(84, 84, 241);
+  }
+}
+.show{
+  transform: translateX(0%) !important;
 }
 }
 }
