@@ -1,0 +1,13 @@
+.slider{
+  position: absolute;
+  top: 4rem;
+  z-index: 11;
+
+  width: 100vw;
+  height: calc(100vh - 4rem);
+
+  background-color: yellow;
+
+  transition: all 400ms ease-in;
+  transform: translateX(-110%);
+}

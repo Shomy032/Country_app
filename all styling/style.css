@@ -9,6 +9,7 @@
 
 body {
   background-color: #202D36;
+  overflow-x: hidden;
 }
 
 header {
@@ -210,6 +211,19 @@ h4:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#main .slider {
+  position: absolute;
+  top: 4rem;
+  z-index: 11;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  background-color: yellow;
+  -webkit-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
 }
 
 #main .no_results {

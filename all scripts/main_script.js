@@ -16,7 +16,8 @@ const url_search = 'https://restcountries.eu/rest/v2/name/name' ;
 
 
 // initial fetch , get 32 random counties.
- getData(url_all_init) ;
+    // disabled for now
+// getData(url_all_init) ;
 
 form.addEventListener('submit' , (e) =>{
   e.preventDefault()
@@ -124,6 +125,7 @@ try{
       .then(data => {
         console.log(data);
         // here we deconstructure
+        console.log(data.name)
       });
     })
   })
