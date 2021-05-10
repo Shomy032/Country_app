@@ -10,6 +10,7 @@ align-items: center;
 justify-content: center;
 
 @import './slider';
+
 @import './search_error' ;
 
 .card{
@@ -21,7 +22,7 @@ margin-bottom: 3rem;
 
  background-color: $light-gray;
 
- 
+ box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
  transition: all 300ms ease;
 }
 .remove{

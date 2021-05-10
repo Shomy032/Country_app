@@ -46,7 +46,7 @@ try{
     }  
     console.log('sort');
     // use random 32 cards
-    let newArr = sort.slice(0 , 32)
+    let newArr = sort.slice(0 , 30)
     // for each country on screen , this function is used later in search too.
     newArr.forEach(country => {
       // create card
@@ -123,10 +123,53 @@ try{
       fetch(`https://restcountries.eu/rest/v2/alpha/${b.classList[0]}`)
       .then(e => e.json())
       .then(data => {
-        console.log(data);
-        // here we deconstructure
-        console.log(data.name)
-      });
+        const {region , subregion , name ,capital , topLevelDomain , languages ,population , timezones , flag , currencies} = data ;
+
+      const slider = document.createElement('div');
+       slider.id = 'slider';
+
+       slider.innerHTML =  `
+       <button id='clear_btn'><i id='left_right' class="fas fa-chevron-left"></i>Back</button>
+       <img id="img" src="${flag}" alt="flag">
+       <div class="description1">
+         <h3>${name}</h3>
+   
+   <p>Population:<span> ${population}</span></p>
+   <p>Region:<span> ${region}</span></p>
+   <p>Sub Region:<span> ${subregion}</span></p>
+   <p>timezone <span>${timezones[0]}</span></p>
+       </div>
+       <div class="description2">
+         <p>Capital:<span> ${capital}</span></p>
+   <p>Top Level Domain:<span> ${topLevelDomain[0]}</span></p>
+   <p>Currencie:<span> ${currencies[0].name} , ${currencies[0].symbol}</span></p>
+   <p>Main Language:<span> ${languages[0].name} </span></p>
+       </div>
+       ` ;
+          // before we append we need to clear main
+     let all_cards = document.querySelectorAll('.card')
+     all_cards.forEach(card => {
+       card.style.display = 'none';
+       console.log('rrr')
+     })
+
+       //
+       main.appendChild(slider);
+       slider.style.transform = 'translateX(0%)' ;
+//
+ const clear_btn = document.getElementById('clear_btn');
+    clear_btn.addEventListener('click' , () => {
+      all_cards.forEach(card => {
+        card.style.display = 'block';
+        console.log('r22');
+        slider.style.transform = 'translateX(-110%)' ;
+        slider.innerHTML = '';
+      })
+    })
+
+      })
+      .catch(err => console.log(err , 'error'))
+      ;
     })
   })
 
@@ -142,6 +185,7 @@ try{
 
 //event to show filter bar
 btn.addEventListener('click' , () => {
+  // add class for active state
   drop_down.classList.toggle('show');
   if(left_right.classList.contains('fa-chevron-left')){
     left_right.classList.remove('fa-chevron-left');

@@ -22,7 +22,7 @@ padding: 0 6rem;
       border-radius: 0.3rem;
       z-index: 9;
 
-      
+      box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
       padding: 0 3rem;
     }
     #input::placeholder{
@@ -68,12 +68,13 @@ button:hover{
   width: 12rem ;
 height: 12.5rem;
 
+
 background-color: $light-gray;
 color: $white;
 
 transform: translateX(250%); // this is by defolt , js gonna cahnge that on click to block
 z-index: 10;
-outline: 1px solid white;
+box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
 transition: all 500ms ease-in;
 button{
   @include button-style;
