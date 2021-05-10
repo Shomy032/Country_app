@@ -29,11 +29,11 @@ margin-bottom: 3rem;
 .card:hover{
 opacity: 0.85;
 }
-.card:hover #show_more{
+.card:hover .show_more{
 
   opacity: 1;
   }
-#show_more{
+.show_more{
   position: absolute;
   top: 2rem;
   left: 0;
@@ -42,7 +42,7 @@ opacity: 0.85;
   opacity: 0;
   
 }
- #show_more:hover{
+ .show_more:hover{
    background-color: $light-gray-hover ;
  }
 img{

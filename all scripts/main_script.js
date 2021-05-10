@@ -1,4 +1,4 @@
-
+// let buttons = [];
 //parent
 const main = document.getElementById('main');
 //form elements
@@ -9,7 +9,7 @@ const btn = document.getElementById('btn');
 const drop_down = document.getElementById('drop_down');
 const left_right = document.getElementById('left_right');
 // url with defined what to fetch (we dont need all)
-const url_all_init = 'https://restcountries.eu/rest/v2/all?fields=name;capital;region;population;flag';
+const url_all_init = 'https://restcountries.eu/rest/v2/all?fields=name;capital;region;population;flag;alpha2Code';
 const url_search = 'https://restcountries.eu/rest/v2/name/name' ;
 //function for serch fetch
 // search function 
@@ -44,13 +44,16 @@ try{
       return 0.5 - Math.random();
     }  
     console.log('sort');
+    // use random 32 cards
     let newArr = sort.slice(0 , 32)
+    // for each country on screen , this function is used later in search too.
     newArr.forEach(country => {
+      // create card
     const card = document.createElement('div');
     card.classList.add('card')
   
     // deconstruct all data we need
-    let {name , capital , region , population , flag } = country ;
+    let {name , capital , region , population , flag , alpha2Code} = country ;
   // add class off region soo we can search later
   if (region !== ''){
     card.classList.add(`${region}`);
@@ -82,10 +85,11 @@ try{
       capital = capital.slice(0, 13) + '...' ;
    }
   //
+
   // add data to card
     card.innerHTML =
     `<img src="${flag}" alt="flag">
-    <button id="show_more">Learn more</button>
+    <button class="${alpha2Code} show_more">Learn more</button>
   <div id="info">
   <h4 id="country_name">${name}</h4>
   <ul>
@@ -105,12 +109,33 @@ try{
   </div> `
   // add it to document
   main.appendChild(card);
-  });
+
+
+
+  }); // end of for each
+
+  let buttons = document.querySelectorAll('.show_more');
+  
+  buttons.forEach( b => {
+    b.addEventListener('click' , () => {
+      console.log('works' , b.classList[0])
+      fetch(`https://restcountries.eu/rest/v2/alpha/${b.classList[0]}`)
+      .then(e => e.json())
+      .then(data => {
+        console.log(data);
+        // here we deconstructure
+      });
+    })
+  })
+
 } catch(err){
   // append another element , bcs we have no search results
   noResults();
+  console.log(err);
 }
- 
+  // i want to search by first class  ->. button[0]
+
+
 }
 
 //event to show filter bar

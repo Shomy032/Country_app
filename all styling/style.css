@@ -273,11 +273,11 @@ h4:hover {
   opacity: 0.85;
 }
 
-#main .card:hover #show_more {
+#main .card:hover .show_more {
   opacity: 1;
 }
 
-#main #show_more {
+#main .show_more {
   position: absolute;
   top: 2rem;
   left: 0;
@@ -294,7 +294,7 @@ h4:hover {
   opacity: 0;
 }
 
-#main #show_more:hover {
+#main .show_more:hover {
   background-color: #38434e;
 }
 
