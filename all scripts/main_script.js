@@ -21,9 +21,15 @@ const url_search = 'https://restcountries.eu/rest/v2/name/name' ;
 
 form.addEventListener('submit' , (e) =>{
   e.preventDefault()
+  const search_value = input.value ;
+
+if(search_value === null || search_value === undefined || search_value === ''){
+  return ;
+}
+   
 
   main.innerHTML = '' ;
-  const search_value = input.value ;
+  
 // it work for now , but i need to add catch statment
   if(search_value){
     getData(`https://restcountries.eu/rest/v2/name/${search_value}`)
@@ -51,8 +57,8 @@ try{
     newArr.forEach(country => {
       // create card
     const card = document.createElement('div');
-    card.classList.add('card')
-  
+    card.classList.add('card');
+    card.classList.add('swing-in-top-fwd');
     // deconstruct all data we need
     let {name , capital , region , population , flag , alpha2Code} = country ;
   // add class off region soo we can search later
@@ -148,13 +154,13 @@ try{
        ` ;
           // before we append we need to clear main
            let all_cards = document.querySelectorAll('.card')
-          setTimeout(() => {
+      //     setTimeout(() => {
            
-     all_cards.forEach(card => {
-       card.style.display = 'none';
-       console.log('1')
-     })
-           } , 400) 
+      // all_cards.forEach(card => {
+      //   card.style.display = 'none';
+      //   console.log('1')
+      // })
+      //       } , 400); 
      
 
        //
@@ -167,11 +173,12 @@ try{
 //
  const clear_btn = document.getElementById('clear_btn');
     clear_btn.addEventListener('click' , () => {
+      
       all_cards.forEach(card => {
-        card.style.display = 'block';
-        console.log('r22');
+       // card.style.display = 'block';
+       // console.log('r22');
         slider.style.transform = 'translateX(-110%)' ;
-        slider.innerHTML = '';
+         slider.innerHTML = '';
       })
     })
 
@@ -241,6 +248,7 @@ function noResults(){
   
   const ele = document.createElement('div');
   ele.classList.add('no_results');
+  ele.classList.add('swing-in-top-fwd');
 
   ele.innerHTML = `
   <i class="fas fa-search"></i>

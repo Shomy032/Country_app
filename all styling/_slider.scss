@@ -1,6 +1,6 @@
 #slider{
   position: fixed;
-  top: 5rem;
+  top: 4rem;
   z-index: 11;
 
   display: flex;
@@ -9,7 +9,7 @@
 
   width: 100vw;
   // height: 0;  //default
-   height: calc(100vh - 6rem); 
+   height: calc(100vh - 4rem); 
 
 padding: 4rem 6rem;
 
