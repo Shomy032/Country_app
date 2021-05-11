@@ -28,6 +28,9 @@ padding: 0 6rem;
     #input::placeholder{
       color: $white;
     }
+    #input:focus{
+      outline: 1px solid $light-gray-hover;
+    }
     .submit{
        transform: translateX(-200%);
       

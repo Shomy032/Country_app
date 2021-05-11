@@ -10,8 +10,10 @@ $siva: rgb(182, 182, 182);
   align-items: center;
   justify-content: space-around;
 
-  margin: 6rem 0;
+  margin: 7rem auto;
   padding: 0 2rem;
+
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
   .fa-search{
     font-size: 10rem;
     color: $siva;
