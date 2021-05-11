@@ -147,15 +147,23 @@ try{
        </div>
        ` ;
           // before we append we need to clear main
-     let all_cards = document.querySelectorAll('.card')
+           let all_cards = document.querySelectorAll('.card')
+          setTimeout(() => {
+           
      all_cards.forEach(card => {
        card.style.display = 'none';
-       console.log('rrr')
+       console.log('1')
      })
+           } , 400) 
+     
 
        //
        main.appendChild(slider);
-       slider.style.transform = 'translateX(0%)' ;
+       setTimeout(() => {
+        slider.style.transform = 'translateX(0%)' ;
+        console.log('2')
+       } , 100) 
+       
 //
  const clear_btn = document.getElementById('clear_btn');
     clear_btn.addEventListener('click' , () => {
@@ -202,11 +210,15 @@ const region_btn = document.querySelectorAll('.region_btn');
 // add on click to all of the with diferent logic
 region_btn.forEach(element => {
 element.addEventListener('click' , () =>{
+
 const region = element.id ;
 const card = document.querySelectorAll(`.card`)
 card.forEach(e => {
 if(!e.classList.contains(`${region}`)){
 e.classList.add('remove');
+} else if(e.classList.contains(`${region}`) && !e.classList.contains('remove')){
+  e.classList.add('remove');
+  
 } 
 else{
   e.classList.remove('remove');
