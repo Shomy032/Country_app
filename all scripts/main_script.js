@@ -14,10 +14,18 @@ const url_search = 'https://restcountries.eu/rest/v2/name/name' ;
 //function for serch fetch
 // search function 
 
-
 // initial fetch , get 32 random counties.
     // disabled for now
- getData(url_all_init) ;
+    getData(url_all_init) ;
+
+
+//refresh
+const refreshh = document.getElementById('refresh');
+refreshh.addEventListener('click' , () =>{
+  getData(url_all_init) ;
+} );
+
+
 
 form.addEventListener('submit' , (e) =>{
   e.preventDefault()
@@ -36,6 +44,7 @@ if(search_value === null || search_value === undefined || search_value === ''){
   } 
   input.value = '' ;
 })
+
 
 //function for initial fetch (reusable later) ;
 async function getData(url){
@@ -261,3 +270,4 @@ function noResults(){
 
 main.appendChild(ele)
 }
+

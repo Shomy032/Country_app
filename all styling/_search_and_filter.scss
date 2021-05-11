@@ -94,4 +94,15 @@ background-color: $light-gray-hover;
   transform: translateX(0%) !important;
 }
 }
+
+#refresh{
+  @include button-style ;
+
+  i{
+    margin-left: 1rem;
+  }
+}
+#refresh:hover{
+  background-color: $light-gray-hover;
+}
 }
