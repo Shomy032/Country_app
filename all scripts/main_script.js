@@ -21,7 +21,15 @@ const url_search = 'https://restcountries.eu/rest/v2/name/name' ;
 //refresh
 const refreshh = document.getElementById('refresh');
 refreshh.addEventListener('click' , () =>{
+  
+  // rempve all filters before appending
+  let region_btn = document.querySelectorAll('.region_btn');
+  region_btn.forEach(e => {
+    e.classList.remove('act');
+  })
+  
   getData(url_all_init) ;
+
 } );
 
 
@@ -29,6 +37,12 @@ refreshh.addEventListener('click' , () =>{
 form.addEventListener('submit' , (e) =>{
   e.preventDefault()
   const search_value = input.value ;
+
+// remove all filters before appending
+let region_btn = document.querySelectorAll('.region_btn');
+region_btn.forEach(e => {
+  e.classList.remove('act');
+})
 
 if(search_value === null || search_value === undefined || search_value === ''){
   return ;
@@ -42,8 +56,11 @@ if(search_value === null || search_value === undefined || search_value === ''){
     getData(`https://restcountries.eu/rest/v2/name/${search_value}`)
   } 
   input.value = '' ;
-})
 
+  
+  
+
+})
 
 //function for initial fetch (reusable later) ;
 async function getData(url){
@@ -222,7 +239,7 @@ btn.addEventListener('click' , () => {
 
 // get all filter buttons
 let region_btn = document.querySelectorAll('.region_btn');
-// add on click to all of the with diferent logic
+// add on click to all of the filters with diferent logic
 region_btn.forEach(element => {
 element.addEventListener('click' , (el) =>{
 
