@@ -1,4 +1,4 @@
-// let buttons = [];
+
 //parent
 const main = document.getElementById('main');
 //form elements
@@ -15,7 +15,6 @@ const url_search = 'https://restcountries.eu/rest/v2/name/name' ;
 // search function 
 
 // initial fetch , get 32 random counties.
-    // disabled for now
     getData(url_all_init) ;
 
 
@@ -222,25 +221,47 @@ btn.addEventListener('click' , () => {
 });
 
 // get all filter buttons
-const region_btn = document.querySelectorAll('.region_btn');
+let region_btn = document.querySelectorAll('.region_btn');
 // add on click to all of the with diferent logic
 region_btn.forEach(element => {
-element.addEventListener('click' , () =>{
+element.addEventListener('click' , (el) =>{
 
-const region = element.id ;
-const card = document.querySelectorAll(`.card`)
-card.forEach(e => {
-if(!e.classList.contains(`${region}`)){
-e.classList.add('remove');
-} else if(e.classList.contains(`${region}`) && !e.classList.contains('remove')){
+  if(el.target.classList.contains('act')){
+  el.target.classList.remove('act');
+  let region = element.id ;
+
+  let card = document.querySelectorAll(`.card`)
+
+  card.forEach(e => {
+    e.classList.remove('remove');
+  })
+} else if(!el.target.classList.remove('act')) {
+  let region_btn = document.querySelectorAll('.region_btn');
+  region_btn.forEach(e => {
+  e.classList.remove('act');
+  })
+  el.target.classList.toggle('act');
+
+
+   region = element.id ;
+
+   card = document.querySelectorAll(`.card`)
+  // 'remove' class is at _main css
+  card.forEach(e => {
+  if(!e.classList.contains(`${region}`)){
   e.classList.add('remove');
+  } else if(e.classList.contains(`${region}`) && !e.classList.contains('remove')){
+    e.classList.add('remove');
+    
+  } 
+  else{
+    e.classList.remove('remove');
+  }
   
-} 
-else{
-  e.classList.remove('remove');
+  })
 }
 
-})
+
 console.log(region);
 })
 });

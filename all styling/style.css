@@ -197,11 +197,7 @@ h4:hover {
   padding-left: 2rem;
 }
 
-#section2 #drop_down_wraper #drop_down .region_btn:hover {
-  background-color: #38434e;
-}
-
-#section2 #drop_down_wraper #drop_down .region_btn:focus {
+#section2 #drop_down_wraper #drop_down .act {
   background-color: #5454f1;
 }
 
