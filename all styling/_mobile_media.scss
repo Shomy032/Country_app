@@ -1,0 +1,97 @@
+@media screen and (max-width : 1100px){
+  #main{
+    padding: 1.3rem 0rem ;
+     
+    .show_more{
+      opacity: 1;
+      top: 8rem;
+    }
+
+    .no_results{
+      margin: 0.5rem auto;
+      width: 90vw;
+
+      .fa-search{
+        font-size: 8rem;
+      }
+    }
+    #slider{
+      padding: 5rem 2rem 4rem;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      position: fixed;
+      h3{
+        margin: 0.8rem 0;
+      }
+      p{
+        margin-top: 0.5rem;
+      }
+      .description2{
+        transform: translateY(0);
+      }
+      button{
+        top: 2rem;
+        left: 2rem;
+
+        
+      }
+      #img{
+        width: 90%;
+        height: 170px;
+      }
+    }
+  }
+  
+  #section2 {
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+
+    height: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    form{
+      width: 95vw;
+      margin: 0rem auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+ button{
+   display: none;
+ }
+      #input{
+        width: 290px;
+      }
+    }
+  }
+  #section2 #drop_down_wraper{
+    width: 192px;
+
+    i{
+      
+    }
+  }
+#input , #refresh , #btn {
+  margin: 0.5rem auto;
+  width: 90%;
+  
+}
+header {
+  padding: 0 0.2rem;
+  margin: 0 ;
+  h3 , h4{
+    margin: 0;
+    transform: scale(0.9);
+  }
+  h3{
+    font-size: 1.1rem;
+  }
+}
+
+.card{
+  width: 300px;
+}
+
+
+
+}

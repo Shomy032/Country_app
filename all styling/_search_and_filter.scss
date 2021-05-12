@@ -55,12 +55,12 @@ button:hover{
  background-color: $light-gray-hover;
 }
 .fa-chevron-left{
-  transform: translateX(-250%);
+  margin-left: 1rem ;
   color: $white;
   pointer-events: none;
 }
 .fa-chevron-right{
-  transform: translateX(-250%);
+  margin-left: 1rem ;
   color: $white;
   pointer-events: none;
 }
@@ -75,7 +75,7 @@ height: 12.5rem;
 background-color: $light-gray;
 color: $white;
 
-transform: translateX(250%); // this is by defolt , js gonna cahnge that on click to block
+transform: translateX(400%); // this is by defolt , js gonna cahnge that on click to block
 z-index: 10;
 box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
 transition: all 500ms ease-in;
