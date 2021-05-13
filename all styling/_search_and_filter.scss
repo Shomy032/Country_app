@@ -22,6 +22,7 @@ padding: 0 6rem;
       border-radius: 0.3rem;
       z-index: 9;
 
+      transition: $trans;
       box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
       padding: 0 3rem;
     }
@@ -34,7 +35,7 @@ padding: 0 6rem;
     .submit{
        transform: translateX(-200%);
       
-    padding: 0.8rem;
+    padding: 0.5rem;
     background-color: transparent;
     border: none;
     outline: none;

@@ -50,15 +50,12 @@ if(search_value === null || search_value === undefined || search_value === ''){
    
 
   main.innerHTML = '' ;
-  
-// it work for now , but i need to add catch statment
+
   if(search_value){
     getData(`https://restcountries.eu/rest/v2/name/${search_value}`)
   } 
   input.value = '' ;
 
-  
-  
 
 })
 
@@ -138,7 +135,15 @@ try{
        <span id="capital">${capital}</span>
     </li>
   </ul> 
-  </div> `
+  </div> ` ;
+
+  // check for theme mode
+  const dark_btn = document.getElementById('dark_mode');
+if(dark_btn.classList.contains('check-mode')){
+  card.classList.add('light2');
+} else {
+  card.classList.remove('light2');
+}
   // add it to document
   main.appendChild(card);
 
@@ -178,7 +183,7 @@ try{
        </div>
        ` ;
           // before we append we need to clear main
-           let all_cards = document.querySelectorAll('.card')
+           let all_cards = document.querySelectorAll('.card');
       //     setTimeout(() => {
            
       // all_cards.forEach(card => {
@@ -186,7 +191,11 @@ try{
       //   console.log('1')
       // })
       //       } , 400); 
-     
+      // check for theme switch
+      const dark_btnn = document.getElementById('dark_mode');
+      if(dark_btnn.classList.contains('check-mode')){
+        slider.classList.add('light2');
+      }
 
        //
        main.appendChild(slider);
@@ -306,6 +315,55 @@ function noResults(){
 </div>
   ` ;
 
+  const dark_btn = document.getElementById('dark_mode');
+if(dark_btn.classList.contains('check-mode')){
+  ele.classList.add('light2');
+}
+
+
 main.appendChild(ele)
 }
 
+
+// theme switcher
+const theme = document.getElementById('dark_mode');
+
+dark_mode.addEventListener('click' , (e) => {
+  // add class that we will later check for
+e.target.classList.toggle('check-mode');
+
+  const body = document.querySelector('body');
+  body.classList.toggle('light1');
+
+  const header = document.querySelector('header');
+   header.classList.toggle('light2');
+
+document.getElementById('refresh').classList.toggle('light2');
+document.querySelector('.reg_btn').classList.toggle('light2');
+
+let reg = document.querySelectorAll('.region_btn');
+reg.forEach(e => {
+  e.classList.toggle('light2')
+})
+
+const car = document.querySelectorAll('.card');
+car.forEach(e => {
+  e.classList.toggle('light2');
+})
+
+input.classList.toggle('light2')
+try{
+  document.getElementById('slider').classList.toggle('light2');
+  console.log('added')
+} catch(err){
+  console.log(err ,'failed to find slider')
+}
+const error_search = document.querySelector('.no_results')
+  try{
+    error_search.classList.toggle('light2')
+  } catch(err){
+console.log(err , 'cant get search err')
+  }
+
+
+});

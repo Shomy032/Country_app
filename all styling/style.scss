@@ -1,11 +1,17 @@
 // font , there is one font only .
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
-//colors
+//colors :
+ //dark theme
 $light-gray :  #2B3743;
 $light-gray-hover :  #38434e;
 $body-gray: #202D36;
+//light theme
 $white : white ;
+$white-light : #dbdada;
+$black : rgb(61, 61, 61);
+// transition all
+$trans : all 300ms linear;
 
 //reset
 *{
@@ -14,7 +20,6 @@ margin: 0;
 padding: 0;
 // font is same for all elements 
 font-family: 'Nunito Sans', sans-serif;
-
 
 }
 
@@ -37,12 +42,17 @@ box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
 }
 
 
+
 body{
   background-color: $body-gray ;
-
+  transition: $trans;
   overflow-x: hidden;
-}
 
+  overflow-y: scroll;
+}
+.light1{
+  background-color: $white-light;
+}
 // header (completly reusable)
 @import './header_section' ;
 
@@ -55,3 +65,43 @@ body{
 //
 
 @import './mobile_media';
+
+
+
+.light2{
+  background-color: $white !important;
+  color: $black !important;
+  transition: $trans !important;
+    button{
+     background-color: $white !important;
+   color: $black !important;
+   transition: $trans !important;
+   }
+  #left_right{
+    color: $black !important;
+  }
+    
+  img{
+    border-bottom: 2px solid gray;
+  }
+  h3 , h4 , span , p{
+    color: $black !important;
+  }
+ 
+
+}
+.light2 > * {
+  transition: $trans;
+}
+.light2::placeholder{
+  color: $black !important;
+}
+
+.act{ // regio button active class
+  background-color: rgb(84, 84, 241) !important;
+  color: white !important;
+}
+
+#section2 form .submit{
+  background-color: transparent !important;
+}
