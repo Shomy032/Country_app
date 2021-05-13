@@ -1,0 +1,38 @@
+
+.light2{
+  background-color: $white !important;
+  color: $black !important;
+  transition: $trans !important;
+    button{
+     background-color: $white !important;
+   color: $black !important;
+   transition: $trans !important;
+   }
+  #left_right{
+    color: $black !important;
+  }
+    
+  img{
+    border-bottom: 2px solid gray;
+  }
+  h3 , h4 , span , p{
+    color: $black !important;
+  }
+ 
+
+}
+.light2 > * {
+  transition: $trans;
+}
+.light2::placeholder{
+  color: $black !important;
+}
+
+.act{ // regio button active class
+  background-color: rgb(84, 84, 241) !important;
+  color: white !important;
+}
+
+#section2 form .submit{
+  background-color: transparent !important;
+}
